@@ -6,10 +6,18 @@ using UnityEngine;
 
 public class Interact : MonoBehaviour
 {
+    public static Interact instance;
+
     public GameObject cam;
     public LayerMask interactMask;
     public Material outlineMaterial;
-    private GameObject lastObj;
+    public bool lookingAtObj;
+    public GameObject lastObj;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Update()
     {
@@ -17,7 +25,7 @@ public class Interact : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(startPos, cam.transform.TransformDirection(Vector3.forward), out hit, 5, interactMask))
         {
-            Debug.Log("Did Hit");
+            lookingAtObj = true;
             lastObj = hit.collider.gameObject;
             List<Material> newMaterials = new List<Material>();
             newMaterials.Add(hit.collider.gameObject.GetComponent<MeshRenderer>().material);
@@ -29,10 +37,11 @@ public class Interact : MonoBehaviour
         {
             if (lastObj)
             {
-                List<Material> newMaterials = hit.collider.gameObject.GetComponent<MeshRenderer>().materials.ToList();
+                lookingAtObj = false;
+                List<Material> newMaterials = lastObj.GetComponent<MeshRenderer>().materials.ToList();
                 newMaterials.RemoveAt(1);
                 Material[] newMaterialsArr = newMaterials.ToArray();
-                hit.collider.gameObject.GetComponent<MeshRenderer>().materials = newMaterialsArr;
+                lastObj.GetComponent<MeshRenderer>().materials = newMaterialsArr;
                 lastObj = null;
             }
         }
