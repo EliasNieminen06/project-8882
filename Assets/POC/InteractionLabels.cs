@@ -9,9 +9,9 @@ public class InteractionLabels : MonoBehaviour
     [SerializeField] TextMeshProUGUI info;
     void Update()
     {
-        if (Interact.instance.lookingAtObj)
+        if (Interact.instance.lastObj != null)
         {
-            header.text = "[ " + Interact.instance.lastObj.GetComponent<ObjectInfo>().interactionButton + " ] " + Interact.instance.lastObj.GetComponent<ObjectInfo>().objectName;
+            header.text = Interact.instance.lastObj.GetComponent<ObjectInfo>().interactionButton + " " + Interact.instance.lastObj.GetComponent<ObjectInfo>().objectName;
             info.text = Interact.instance.lastObj.GetComponent<ObjectInfo>().objectInfo;
         }
         else

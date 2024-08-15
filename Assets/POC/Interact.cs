@@ -13,6 +13,7 @@ public class Interact : MonoBehaviour
     public Material outlineMaterial;
     public bool lookingAtObj;
     public GameObject lastObj;
+    [Range(0, 5)] public float interactionDistance;
 
     private void Awake()
     {
@@ -23,7 +24,7 @@ public class Interact : MonoBehaviour
     {
         Vector3 startPos = cam.transform.position;
         RaycastHit hit;
-        if (Physics.Raycast(startPos, cam.transform.TransformDirection(Vector3.forward), out hit, 5, interactMask))
+        if (Physics.Raycast(startPos, cam.transform.TransformDirection(Vector3.forward), out hit, interactionDistance, interactMask) && hit.collider.gameObject.GetComponent<ObjectInfo>().interactable)
         {
             lookingAtObj = true;
             lastObj = hit.collider.gameObject;
@@ -39,7 +40,7 @@ public class Interact : MonoBehaviour
             {
                 lookingAtObj = false;
                 List<Material> newMaterials = lastObj.GetComponent<MeshRenderer>().materials.ToList();
-                newMaterials.RemoveAt(1);
+                newMaterials.RemoveAt(newMaterials.Count - 1);
                 Material[] newMaterialsArr = newMaterials.ToArray();
                 lastObj.GetComponent<MeshRenderer>().materials = newMaterialsArr;
                 lastObj = null;
