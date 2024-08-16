@@ -13,7 +13,6 @@ public class Pickup : MonoBehaviour
             {
                 Interact.instance.lookingAtObj = false;
                 Hand.instance.HoldInHand(Interact.instance.lastObj);
-                Destroy(Interact.instance.lastObj);
             }
         }
     }

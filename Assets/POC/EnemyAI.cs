@@ -17,6 +17,9 @@ public class EnemyAI : MonoBehaviour
 
     public NavMeshAgent agent;
     [Range(1, 50)] public float walkRadius;
+    [Range(0, 5)] public float roamSpeed;
+    [Range(0, 5)] public float chaseSpeed;
+    [Range(0, 1)] public float destinationTreshold;
     public states state;
 
     private void Awake()
@@ -35,28 +38,41 @@ public class EnemyAI : MonoBehaviour
                 Roaming();
                 break;
             case states.Chasing:
+                Chasing();
                 break;
         }
     }
 
     private void Roaming()
     {
-        if (agent != null && agent.remainingDistance <= agent.stoppingDistance)
+        agent.speed = roamSpeed;
+        if (agent != null && agent.remainingDistance <= agent.stoppingDistance + destinationTreshold)
         {
             agent.SetDestination(RandomNavMeshPosition());
         }
     }
 
-    public void Chase(Transform pos)
+    private void Chasing()
+    {
+        agent.speed = chaseSpeed;
+        if (agent != null && agent.remainingDistance <= agent.stoppingDistance + destinationTreshold)
+        {
+            state = states.Roaming;
+        }
+    }
+
+    public void Chase(Vector3 pos)
     {
         if (state != states.Disabled)
         {
-            state = states.Chasing;
-            agent.SetDestination(pos.position);
-            if (agent != null && agent.remainingDistance <= agent.stoppingDistance)
+            if (NavMesh.SamplePosition(pos, out NavMeshHit hit, walkRadius, 1))
             {
-                state = states.Roaming;
-                print("s");
+                agent.SetDestination(hit.position);
+                state = states.Chasing;
+            }
+            else
+            {
+                Debug.LogWarning("Impossible destination");
             }
         }
     }

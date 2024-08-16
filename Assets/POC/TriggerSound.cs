@@ -12,7 +12,7 @@ public class TriggerSound : MonoBehaviour
         {
             AudioManager.Instance.Play(soundName);
 
-            EnemyAI.instance.Chase(transform);
+            EnemyAI.instance.Chase(transform.position);
         }
     }
 }

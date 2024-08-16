@@ -22,7 +22,6 @@ public class Movement : MonoBehaviour
     public float speed;
     float cameraCap;
     float velocityY;
-    float gravity = -30f;
     Vector2 currentMouseDelta;
     Vector2 currentMouseDeltaVelocity;
     Vector2 currentDir;
@@ -74,13 +73,8 @@ public class Movement : MonoBehaviour
         Vector2 targetDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         targetDir.Normalize();
         currentDir = Vector2.SmoothDamp(currentDir, targetDir, ref currentDirVelocity, moveSmoothTime);
-        velocityY += gravity * 2 * Time.deltaTime;
         Vector3 velocity = (transform.forward * currentDir.y + transform.right * currentDir.x) * speed + Vector3.up * velocityY;
         controller.Move(velocity * Time.deltaTime);
-        if (isGrounded! && controller.velocity.y < -1f)
-        {
-            velocityY = -8f;
-        }
 
     }
 

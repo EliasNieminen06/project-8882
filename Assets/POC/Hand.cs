@@ -9,6 +9,7 @@ public class Hand : MonoBehaviour
 
     public Transform holdPos;
     public GameObject heldObj;
+    [Range(1, 5)] public float throwForce;
 
     private void Awake()
     {
@@ -19,18 +20,29 @@ public class Hand : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            Destroy(heldObj.gameObject);
+            if (heldObj != null)
+            {
+                ThrowFromHand();
+            }
         }
+    }
+
+    public void ThrowFromHand()
+    {
+        heldObj.GetComponent<Rigidbody>().isKinematic = false;
+        heldObj.GetComponent<Rigidbody>().AddForce(this.transform.forward * throwForce, ForceMode.Impulse);
+        heldObj.transform.SetParent(null);
+        heldObj.GetComponent<ObjectInfo>().interactable = true;
+        heldObj = null;
     }
 
     public void HoldInHand(GameObject obj)
     {
-        heldObj = Instantiate(obj, holdPos.transform.position, holdPos.transform.rotation, holdPos);
+        heldObj = obj;
+        heldObj.transform.SetParent(holdPos, true);
+        heldObj.transform.position = holdPos.transform.position;
+        heldObj.transform.rotation = holdPos.transform.rotation;
         heldObj.GetComponent<ObjectInfo>().interactable = false;
-
-        List<Material> newMaterials = heldObj.GetComponent<MeshRenderer>().materials.ToList();
-        newMaterials.RemoveAt(newMaterials.Count - 1);
-        Material[] newMaterialsArr = newMaterials.ToArray();
-        heldObj.GetComponent<MeshRenderer>().materials = newMaterialsArr;
+        heldObj.GetComponent<Rigidbody>().isKinematic = true;
     }
 }
