@@ -14,7 +14,6 @@ public class ObjectInfo : MonoBehaviour
 
     [Header("Door")]
     public bool isDoor = false;
-    public GameObject parent;
     [Range(0, 180)] public float openAngle;
     public bool locked = false;
     public bool opened = false;

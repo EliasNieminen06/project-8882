@@ -29,8 +29,11 @@ public class Hand : MonoBehaviour
 
     public void ThrowFromHand()
     {
-        heldObj.GetComponent<Rigidbody>().isKinematic = false;
-        heldObj.GetComponent<Rigidbody>().AddForce(this.transform.forward * throwForce, ForceMode.Impulse);
+        if (heldObj.GetComponent<Rigidbody>())
+        {
+            heldObj.GetComponent<Rigidbody>().isKinematic = false;
+            heldObj.GetComponent<Rigidbody>().AddForce(this.transform.forward * throwForce, ForceMode.Impulse);
+        }
         heldObj.transform.SetParent(null);
         heldObj.GetComponent<ObjectInfo>().interactable = true;
         heldObj = null;
@@ -43,6 +46,9 @@ public class Hand : MonoBehaviour
         heldObj.transform.position = holdPos.transform.position;
         heldObj.transform.rotation = holdPos.transform.rotation;
         heldObj.GetComponent<ObjectInfo>().interactable = false;
-        heldObj.GetComponent<Rigidbody>().isKinematic = true;
+        if (heldObj.GetComponent<Rigidbody>())
+        {
+            heldObj.GetComponent<Rigidbody>().isKinematic = true;
+        }
     }
 }

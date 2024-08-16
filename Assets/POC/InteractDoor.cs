@@ -8,9 +8,9 @@ public class OpenDoor : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (Interact.instance.lastObj.GetComponent<ObjectInfo>().isDoor && !Interact.instance.lastObj.GetComponent<ObjectInfo>().locked)
+            if (Interact.instance.lastObj != null && Interact.instance.lastObj.GetComponent<ObjectInfo>().isDoor && !Interact.instance.lastObj.GetComponent<ObjectInfo>().locked)
             {
-                Interact.instance.lastObj.GetComponent<ObjectInfo>().parent.GetComponent<ToggleDoor>().toggleDoor();
+                Interact.instance.lastObj.GetComponent<ToggleDoor>().toggleDoor();
             }
         }
     }
