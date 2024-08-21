@@ -12,6 +12,13 @@ public class InteractionLabels : MonoBehaviour
         if (Interact.instance.lastObj != null)
         {
             header.text = Interact.instance.lastObj.GetComponent<ObjectInfo>().interactionButton + " " + Interact.instance.lastObj.GetComponent<ObjectInfo>().objectName;
+            if (Interact.instance.lastObj.GetComponent<ObjectInfo>().isDoor)
+            {
+                if (Interact.instance.lastObj.GetComponent<ObjectInfo>().locked)
+                {
+                    info.text = "I need a key to open this door.";
+                }
+            }
             info.text = Interact.instance.lastObj.GetComponent<ObjectInfo>().objectInfo;
         }
         else

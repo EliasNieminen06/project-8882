@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObjectInfo : MonoBehaviour
 {
+    public string objectID;
     public string interactionButton;
     public string objectName;
     public string objectInfo;
@@ -13,6 +14,7 @@ public class ObjectInfo : MonoBehaviour
     public bool pickable = false;
 
     [Header("Door")]
+    public string regKeyID;
     public bool isDoor = false;
     [Range(0, 180)] public float openAngle;
     public bool locked = false;
