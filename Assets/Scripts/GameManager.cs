@@ -8,9 +8,24 @@ public class GameManager : MonoBehaviour
 
     public int levelOfInsanity = 0;
     public int currentCheckpoint = 0;
+    public GameObject pauseMenu;
+    public bool isPuased;
 
     private void Awake()
     {
         instance = this;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            TogglePause();
+        }
+    }
+
+    void TogglePause()
+    {
+
     }
 }
