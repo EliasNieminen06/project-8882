@@ -7,30 +7,34 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public int levelOfInsanity = 0;
-    public int currentCheckpoint = 0;
+    public int currentLevel = 0;
     public GameObject pauseMenu;
+    public GameObject gameUI;
     public bool isPuased;
     public GameObject player;
-
-    [Header("Checkpoint System")]
-    public Scene[] checkpoints;
+    public bool isInGame;
 
     private void Awake()
     {
         instance = this;
+        DontDestroyOnLoad(this);
     }
 
     private void Start()
     {
-        player = GameObject.Find("Player");
+        isInGame = false;
+        gameUI.SetActive(false);
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) && isInGame)
         {
             TogglePause();
+        }
+        if (player == null)
+        {
+            player = GameObject.Find("Player");
         }
     }
 
@@ -49,5 +53,19 @@ public class GameManager : MonoBehaviour
             pauseMenu.SetActive(false);
             player.GetComponent<Movement>().enabled = true;
         }
+    }
+
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+        isInGame = false;
+        gameUI.SetActive(false);
+    }
+
+    public void ChangeLevel(int level)
+    {
+        SceneManager.LoadScene("Level" + level);
+        isInGame = true;
+        gameUI.SetActive(true);
     }
 }
