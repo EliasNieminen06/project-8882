@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class GameManager : MonoBehaviour
     public GameObject pauseMenu;
     public bool isPuased;
     public GameObject player;
+
+    [Header("Checkpoint System")]
+    public Scene[] checkpoints;
 
     private void Awake()
     {
