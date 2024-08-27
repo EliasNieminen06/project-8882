@@ -24,17 +24,20 @@ public class Interact : MonoBehaviour
     {
         Vector3 startPos = cam.transform.position;
         RaycastHit hit;
-        if (Physics.Raycast(startPos, cam.transform.TransformDirection(Vector3.forward), out hit, interactionDistance, interactMask) && hit.collider.gameObject.GetComponent<ObjectInfo>().interactable)
+        if (Physics.Raycast(startPos, cam.transform.TransformDirection(Vector3.forward), out hit, interactionDistance, interactMask) && hit.collider.gameObject.GetComponent<ObjectInfo>().interactable && !lookingAtObj)
         {
             lookingAtObj = true;
             lastObj = hit.collider.gameObject;
             List<Material> newMaterials = new List<Material>();
-            newMaterials.Add(hit.collider.gameObject.GetComponent<MeshRenderer>().material);
+            for (int i = 0; i < lastObj.GetComponent<MeshRenderer>().materials.Length; i++)
+            {
+                newMaterials.Add(hit.collider.gameObject.GetComponent<MeshRenderer>().materials[i]);
+            }
             newMaterials.Add(outlineMaterial);
             Material[] newMaterialsArr = newMaterials.ToArray();
             hit.collider.gameObject.GetComponent<MeshRenderer>().materials = newMaterialsArr;
         }
-        else
+        else if (!Physics.Raycast(startPos, cam.transform.TransformDirection(Vector3.forward), out hit, interactionDistance, interactMask))
         {
             if (lastObj)
             {
