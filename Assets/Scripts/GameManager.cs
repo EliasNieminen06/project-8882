@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     public bool isPuased;
     public GameObject player;
     public bool isInGame;
+    public int batteries = 0;
+    public float flashlightBatteryLevel = 100;
+    public float maxFlashlightBatteryLevel;
 
     private void Awake()
     {
