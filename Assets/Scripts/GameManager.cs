@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public bool isInGame;
     public int batteries = 0;
-    public float flashlightBatteryLevel = 100;
+    public float flashlightBatteryLevel;
     public float maxFlashlightBatteryLevel;
 
     private void Awake()
@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     {
         isInGame = false;
         gameUI.SetActive(false);
+        flashlightBatteryLevel = maxFlashlightBatteryLevel;
     }
 
     private void Update()
@@ -38,6 +39,10 @@ public class GameManager : MonoBehaviour
         if (player == null)
         {
             player = GameObject.Find("Player");
+        }
+        if (Flashlight.instance != null && Flashlight.instance.isOn)
+        {
+            drainFlashlightPower();
         }
     }
 
@@ -70,5 +75,22 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Level" + level);
         isInGame = true;
         gameUI.SetActive(true);
+    }
+
+    public void drainFlashlightPower()
+    {
+        if (flashlightBatteryLevel > 0)
+        {
+            flashlightBatteryLevel -= Time.deltaTime;
+        }
+    }
+
+    public void ReloadFlashlight()
+    {
+        if (flashlightBatteryLevel < 50 && batteries > 0)
+        {
+            flashlightBatteryLevel = maxFlashlightBatteryLevel;
+            batteries--;
+        }
     }
 }

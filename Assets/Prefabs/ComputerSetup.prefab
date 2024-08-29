@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6850183807496784310}
+  - component: {fileID: 8541030208317627819}
   m_Layer: 0
   m_Name: ComputerSetup
   m_TagString: Untagged
@@ -35,6 +36,27 @@ Transform:
   - {fileID: 2146491466148856528}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8541030208317627819
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3263657059758837968}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.25, y: 3.05, z: 2.15}
+  m_Center: {x: 0, y: 1.59, z: 0}
 --- !u!1 &3389629122726885233
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,7 +333,7 @@ Transform:
   m_GameObject: {fileID: 6775536707550398314}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.53024936, y: 0.7915739, z: 0.08027692}
+  m_LocalPosition: {x: 0.703, y: 0.751, z: 0.112}
   m_LocalScale: {x: 2.5067682, y: 1.208694, z: 3.9174633}
   m_ConstrainProportionsScale: 0
   m_Children: []
