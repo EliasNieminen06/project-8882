@@ -148,4 +148,4 @@ MonoBehaviour:
   roamSpeed: 1
   chaseSpeed: 2
   destinationTreshold: 0.1
-  state: 1
+  state: 0
