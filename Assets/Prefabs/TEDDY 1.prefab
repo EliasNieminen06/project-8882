@@ -145,4 +145,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   agent: {fileID: 0}
-  active: 1
+  active: 0

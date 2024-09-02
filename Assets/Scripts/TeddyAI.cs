@@ -17,7 +17,7 @@ public class TeddyAI : MonoBehaviour
 
     private void Update()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) > 1.5)
+        if (active && Vector3.Distance(transform.position, player.transform.position) > 1.5)
         {
             agent.SetDestination(player.transform.position);
         }
