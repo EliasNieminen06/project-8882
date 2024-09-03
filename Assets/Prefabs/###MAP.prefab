@@ -542,6 +542,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: roof
       objectReference: {fileID: 0}
+    - target: {fileID: 3342557715341537330, guid: 75c00d4f11f534913820eeca461b5790, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3641818632810648951, guid: 75c00d4f11f534913820eeca461b5790, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.21
