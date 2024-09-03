@@ -19,4 +19,9 @@ public class ObjectInfo : MonoBehaviour
     [Range(-180, 180)] public float openAngle;
     public bool locked = false;
     public bool opened = false;
+
+    [Header("Dialogue")]
+    public bool isDialogue;
+    public List<string> dialogues = new List<string>();
+    public string riddleAnswer;
 }

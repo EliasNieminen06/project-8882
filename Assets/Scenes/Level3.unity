@@ -1422,7 +1422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 415537cbd71d640fca74fedaede944fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: number04
+  objectID: riddleObj004
   interactionButton: '[ E ]'
   objectName: Bed Number
   objectInfo: 
@@ -1433,6 +1433,9 @@ MonoBehaviour:
   openAngle: 0
   locked: 0
   opened: 0
+  isDialogue: 0
+  dialogues: []
+  riddleAnswer: 
 --- !u!65 &197314882
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2069,7 +2072,7 @@ PrefabInstance:
       objectReference: {fileID: 246463429}
     - target: {fileID: 7220327338569454849, guid: 44baca92380544aa3b4c7c299bbd5ede, type: 3}
       propertyPath: m_VersionIndex
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8035165182540275823, guid: 44baca92380544aa3b4c7c299bbd5ede, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2684,7 +2687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 415537cbd71d640fca74fedaede944fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: number00
+  objectID: riddleObj000
   interactionButton: '[ E ]'
   objectName: Bed Number
   objectInfo: 
@@ -2695,6 +2698,9 @@ MonoBehaviour:
   openAngle: 0
   locked: 0
   opened: 0
+  isDialogue: 0
+  dialogues: []
+  riddleAnswer: 
 --- !u!65 &319146529
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2746,7 +2752,7 @@ PrefabInstance:
       objectReference: {fileID: 91762490}
     - target: {fileID: 7220327338569454849, guid: 44baca92380544aa3b4c7c299bbd5ede, type: 3}
       propertyPath: m_VersionIndex
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8035165182540275823, guid: 44baca92380544aa3b4c7c299bbd5ede, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3005,7 +3011,6 @@ Transform:
   - {fileID: 1028991069}
   - {fileID: 319146526}
   - {fileID: 293037025}
-  - {fileID: 444102274}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &425516302
@@ -3082,72 +3087,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7311658066298201806, guid: 07873059959564efabc9b2301ae77b6f, type: 3}
   m_PrefabInstance: {fileID: 425516302}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &444102273
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 371779556}
-    m_Modifications:
-    - target: {fileID: 3240036884139372528, guid: d5423ef44728747d1aeab0226fb60734, type: 3}
-      propertyPath: objectID
-      value: key002
-      objectReference: {fileID: 0}
-    - target: {fileID: 3953656663229044275, guid: d5423ef44728747d1aeab0226fb60734, type: 3}
-      propertyPath: m_Name
-      value: Key4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7716838809832872260, guid: d5423ef44728747d1aeab0226fb60734, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.785602
-      objectReference: {fileID: 0}
-    - target: {fileID: 7716838809832872260, guid: d5423ef44728747d1aeab0226fb60734, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.024652602
-      objectReference: {fileID: 0}
-    - target: {fileID: 7716838809832872260, guid: d5423ef44728747d1aeab0226fb60734, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.7044582
-      objectReference: {fileID: 0}
-    - target: {fileID: 7716838809832872260, guid: d5423ef44728747d1aeab0226fb60734, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071067
-      objectReference: {fileID: 0}
-    - target: {fileID: 7716838809832872260, guid: d5423ef44728747d1aeab0226fb60734, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 7716838809832872260, guid: d5423ef44728747d1aeab0226fb60734, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7716838809832872260, guid: d5423ef44728747d1aeab0226fb60734, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7716838809832872260, guid: d5423ef44728747d1aeab0226fb60734, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7716838809832872260, guid: d5423ef44728747d1aeab0226fb60734, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7716838809832872260, guid: d5423ef44728747d1aeab0226fb60734, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d5423ef44728747d1aeab0226fb60734, type: 3}
---- !u!4 &444102274 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7716838809832872260, guid: d5423ef44728747d1aeab0226fb60734, type: 3}
-  m_PrefabInstance: {fileID: 444102273}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &447690907
 PrefabInstance:
@@ -4192,7 +4131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 415537cbd71d640fca74fedaede944fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: number05
+  objectID: riddleObj005
   interactionButton: '[ E ]'
   objectName: Bed Number
   objectInfo: 
@@ -4203,6 +4142,9 @@ MonoBehaviour:
   openAngle: 0
   locked: 0
   opened: 0
+  isDialogue: 0
+  dialogues: []
+  riddleAnswer: 
 --- !u!65 &583541261
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4674,7 +4616,7 @@ PrefabInstance:
       objectReference: {fileID: 2089224185}
     - target: {fileID: 7220327338569454849, guid: 44baca92380544aa3b4c7c299bbd5ede, type: 3}
       propertyPath: m_VersionIndex
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8035165182540275823, guid: 44baca92380544aa3b4c7c299bbd5ede, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5302,7 +5244,7 @@ PrefabInstance:
       objectReference: {fileID: 1924509317}
     - target: {fileID: 7220327338569454849, guid: 44baca92380544aa3b4c7c299bbd5ede, type: 3}
       propertyPath: m_VersionIndex
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8035165182540275823, guid: 44baca92380544aa3b4c7c299bbd5ede, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5502,7 +5444,7 @@ PrefabInstance:
       objectReference: {fileID: 1169562303}
     - target: {fileID: 7220327338569454849, guid: 44baca92380544aa3b4c7c299bbd5ede, type: 3}
       propertyPath: m_VersionIndex
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8035165182540275823, guid: 44baca92380544aa3b4c7c299bbd5ede, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6522,7 +6464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 415537cbd71d640fca74fedaede944fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: number06
+  objectID: riddleObj006
   interactionButton: '[ E ]'
   objectName: Bed Number
   objectInfo: 
@@ -6533,6 +6475,9 @@ MonoBehaviour:
   openAngle: 0
   locked: 0
   opened: 0
+  isDialogue: 0
+  dialogues: []
+  riddleAnswer: 
 --- !u!65 &910945112
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6643,7 +6588,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 415537cbd71d640fca74fedaede944fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: number02
+  objectID: riddleObj002
   interactionButton: '[ E ]'
   objectName: Bed Number
   objectInfo: 
@@ -6654,6 +6599,9 @@ MonoBehaviour:
   openAngle: 0
   locked: 0
   opened: 0
+  isDialogue: 0
+  dialogues: []
+  riddleAnswer: 
 --- !u!65 &918276496
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6764,7 +6712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 415537cbd71d640fca74fedaede944fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: number07
+  objectID: riddleObj007
   interactionButton: '[ E ]'
   objectName: Bed Number
   objectInfo: 
@@ -6775,6 +6723,9 @@ MonoBehaviour:
   openAngle: 0
   locked: 0
   opened: 0
+  isDialogue: 0
+  dialogues: []
+  riddleAnswer: 
 --- !u!65 &922506540
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7006,7 +6957,7 @@ PrefabInstance:
       objectReference: {fileID: 860702938}
     - target: {fileID: 7220327338569454849, guid: 44baca92380544aa3b4c7c299bbd5ede, type: 3}
       propertyPath: m_VersionIndex
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8035165182540275823, guid: 44baca92380544aa3b4c7c299bbd5ede, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7421,7 +7372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 415537cbd71d640fca74fedaede944fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: number08
+  objectID: riddleObj008
   interactionButton: '[ E ]'
   objectName: Bed Number
   objectInfo: 
@@ -7432,6 +7383,9 @@ MonoBehaviour:
   openAngle: 0
   locked: 0
   opened: 0
+  isDialogue: 0
+  dialogues: []
+  riddleAnswer: 
 --- !u!65 &994204710
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7617,7 +7571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 415537cbd71d640fca74fedaede944fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: number09
+  objectID: riddleObj009
   interactionButton: '[ E ]'
   objectName: Bed Number
   objectInfo: 
@@ -7628,6 +7582,9 @@ MonoBehaviour:
   openAngle: 0
   locked: 0
   opened: 0
+  isDialogue: 0
+  dialogues: []
+  riddleAnswer: 
 --- !u!65 &1028991072
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7944,7 +7901,7 @@ PrefabInstance:
       objectReference: {fileID: 1435780556}
     - target: {fileID: 7220327338569454849, guid: 44baca92380544aa3b4c7c299bbd5ede, type: 3}
       propertyPath: m_VersionIndex
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8035165182540275823, guid: 44baca92380544aa3b4c7c299bbd5ede, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9806,7 +9763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 415537cbd71d640fca74fedaede944fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: number01
+  objectID: riddleObj001
   interactionButton: '[ E ]'
   objectName: Bed Number
   objectInfo: 
@@ -9817,6 +9774,9 @@ MonoBehaviour:
   openAngle: 0
   locked: 0
   opened: 0
+  isDialogue: 0
+  dialogues: []
+  riddleAnswer: 
 --- !u!65 &1426091324
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10508,7 +10468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 415537cbd71d640fca74fedaede944fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: number03
+  objectID: riddleObj003
   interactionButton: '[ E ]'
   objectName: Bed Number
   objectInfo: 
@@ -10519,6 +10479,9 @@ MonoBehaviour:
   openAngle: 0
   locked: 0
   opened: 0
+  isDialogue: 0
+  dialogues: []
+  riddleAnswer: 
 --- !u!65 &1598265471
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10570,7 +10533,7 @@ PrefabInstance:
       objectReference: {fileID: 214355004}
     - target: {fileID: 7220327338569454849, guid: 44baca92380544aa3b4c7c299bbd5ede, type: 3}
       propertyPath: m_VersionIndex
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8035165182540275823, guid: 44baca92380544aa3b4c7c299bbd5ede, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11927,7 +11890,7 @@ PrefabInstance:
       objectReference: {fileID: 2035309817}
     - target: {fileID: 7220327338569454849, guid: 44baca92380544aa3b4c7c299bbd5ede, type: 3}
       propertyPath: m_VersionIndex
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8035165182540275823, guid: 44baca92380544aa3b4c7c299bbd5ede, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13778,7 +13741,7 @@ PrefabInstance:
       objectReference: {fileID: 521149987}
     - target: {fileID: 7220327338569454849, guid: 44baca92380544aa3b4c7c299bbd5ede, type: 3}
       propertyPath: m_VersionIndex
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8035165182540275823, guid: 44baca92380544aa3b4c7c299bbd5ede, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14991,7 +14954,7 @@ PrefabInstance:
       objectReference: {fileID: 371652168}
     - target: {fileID: 7220327338569454849, guid: 44baca92380544aa3b4c7c299bbd5ede, type: 3}
       propertyPath: m_VersionIndex
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8035165182540275823, guid: 44baca92380544aa3b4c7c299bbd5ede, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15051,6 +15014,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3188454333948261304, guid: f2265f0430e834c04ab40f11193ca8a5, type: 3}
+      propertyPath: riddleAnswer
+      value: riddleObj007
+      objectReference: {fileID: 0}
     - target: {fileID: 7172767028454047367, guid: f2265f0430e834c04ab40f11193ca8a5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.871

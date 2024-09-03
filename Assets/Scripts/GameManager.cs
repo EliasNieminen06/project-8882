@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class GameManager : MonoBehaviour
     public int currentLevel = 0;
     public GameObject pauseMenu;
     public GameObject gameUI;
+    public GameObject dialogUI;
+    public List<string> dialogs = new List<string>();
     public bool isPuased;
     public GameObject player;
     public bool isInGame;
@@ -44,6 +47,10 @@ public class GameManager : MonoBehaviour
         {
             drainFlashlightPower();
         }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            nextDialog();
+        }
     }
 
     void TogglePause()
@@ -75,6 +82,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Level" + level);
         isInGame = true;
         gameUI.SetActive(true);
+        currentLevel = level;
     }
 
     public void drainFlashlightPower()
@@ -91,6 +99,26 @@ public class GameManager : MonoBehaviour
         {
             flashlightBatteryLevel = maxFlashlightBatteryLevel;
             batteries--;
+        }
+    }
+
+    public void startDialogue()
+    {
+        dialogUI.SetActive(true);
+        dialogUI.GetComponentInChildren<TextMeshProUGUI>().text = dialogs[0];
+    }
+
+    public void nextDialog()
+    {
+        if (dialogs.Count > 1)
+        {
+            dialogs.RemoveAt(0);
+            dialogUI.GetComponentInChildren<TextMeshProUGUI>().text = dialogs[0];
+        }
+        else
+        {
+            dialogUI.SetActive(false);
+            dialogs.Clear();
         }
     }
 }
