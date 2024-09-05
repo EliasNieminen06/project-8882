@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -22,10 +23,17 @@ public class EnemyAI : MonoBehaviour
     [Range(0, 1)] public float destinationTreshold;
     public states state;
 
+    private GameObject player;
+
     private void Awake()
     {
         instance = this;
         agent = GetComponent<NavMeshAgent>();
+    }
+
+    private void Start()
+    {
+        player = GameObject.Find("Player");
     }
 
     private void Update()
@@ -40,6 +48,21 @@ public class EnemyAI : MonoBehaviour
             case states.Chasing:
                 Chasing();
                 break;
+            case states.Attacking:
+                break;
+        }
+
+        if (Vector3.Distance(player.transform.position, transform.position) < 2)
+        {
+            Vector3 playerstartpos = player.transform.position;
+            if (player.transform.position != playerstartpos)
+            {
+                if (state != states.Attacking)
+                {
+                    state = states.Attacking;
+                    Attack(player.transform.position);
+                }
+            }
         }
     }
 
@@ -59,6 +82,12 @@ public class EnemyAI : MonoBehaviour
         {
             state = states.Roaming;
         }
+    }
+
+    private void Attack(Vector3 pos)
+    {
+        agent.SetDestination(pos);
+        Debug.Log("attacked");
     }
 
     public void Chase(Vector3 pos)
