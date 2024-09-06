@@ -11,8 +11,10 @@ public class TriggerSound : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             AudioManager.Instance.Play(soundName);
-
-            EnemyAI.instance.Chase(transform.position);
+            if (EnemyAI.instance != null)
+            {
+                EnemyAI.instance.Chase(transform.position);
+            }
         }
     }
 }

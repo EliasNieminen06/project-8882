@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     {
         isInGame = false;
         gameUI.SetActive(false);
+        player.SetActive(false);
         flashlightBatteryLevel = maxFlashlightBatteryLevel;
     }
 
@@ -84,18 +85,7 @@ public class GameManager : MonoBehaviour
 
     public void ChangeLevel(int level)
     {
-        if (player != null)
-        {
-            Vector3 lastPos = player.transform.position;
-            float lastPlayerRotation = player.transform.rotation.y;
-            float lastCamAngle = playerCamera.transform.rotation.x;
-
-            LoadSceneWithPos(lastCamAngle, lastPlayerRotation, lastPos, level);
-        }
-        else
-        {
-            LoadScene(level);
-        }
+        LoadScene(level);
     }
 
     private void LoadScene(int level)
@@ -103,22 +93,10 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Level" + level);
         isInGame = true;
         gameUI.SetActive(true);
+        player.SetActive(true);
         currentLevel = level;
-        Debug.Log("s");
-    }
-
-    IEnumerator LoadSceneWithPos(float lastCamAngle, float lastPlayerRotation, Vector3 lastPos, int level)
-    {
-        AsyncOperation loadAsync = SceneManager.LoadSceneAsync("Level" + level);
-
-        while (!loadAsync.isDone)
-        {
-            yield return null;
-        }
-
-        playerCamera.transform.Rotate(lastCamAngle, 0, 0);
-        player.transform.Rotate(0, lastPlayerRotation, 0);
-        player.transform.position = lastPos;
+        Interact.instance.lastObj = null;
+        Interact.instance.lookingAtObj = false;
     }
 
     public void drainFlashlightPower()
