@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public List<string> dialogs = new List<string>();
     public bool isPuased;
     public GameObject player;
+    public GameObject playerCamera;
     public bool isInGame;
     public int batteries = 0;
     public float flashlightBatteryLevel;
@@ -42,6 +43,10 @@ public class GameManager : MonoBehaviour
         if (player == null)
         {
             player = GameObject.Find("Player");
+        }
+        if (playerCamera == null)
+        {
+            playerCamera = GameObject.Find("Player Camera");
         }
         if (Flashlight.instance != null && Flashlight.instance.isOn)
         {
@@ -79,10 +84,41 @@ public class GameManager : MonoBehaviour
 
     public void ChangeLevel(int level)
     {
+        if (player != null)
+        {
+            Vector3 lastPos = player.transform.position;
+            float lastPlayerRotation = player.transform.rotation.y;
+            float lastCamAngle = playerCamera.transform.rotation.x;
+
+            LoadSceneWithPos(lastCamAngle, lastPlayerRotation, lastPos, level);
+        }
+        else
+        {
+            LoadScene(level);
+        }
+    }
+
+    private void LoadScene(int level)
+    {
         SceneManager.LoadScene("Level" + level);
         isInGame = true;
         gameUI.SetActive(true);
         currentLevel = level;
+        Debug.Log("s");
+    }
+
+    IEnumerator LoadSceneWithPos(float lastCamAngle, float lastPlayerRotation, Vector3 lastPos, int level)
+    {
+        AsyncOperation loadAsync = SceneManager.LoadSceneAsync("Level" + level);
+
+        while (!loadAsync.isDone)
+        {
+            yield return null;
+        }
+
+        playerCamera.transform.Rotate(lastCamAngle, 0, 0);
+        player.transform.Rotate(0, lastPlayerRotation, 0);
+        player.transform.position = lastPos;
     }
 
     public void drainFlashlightPower()
