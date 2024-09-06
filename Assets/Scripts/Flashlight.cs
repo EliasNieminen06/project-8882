@@ -27,6 +27,7 @@ public class Flashlight : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
+                AudioManager.Instance.Play("Flashlight");
                 isOn = !isOn;
                 if (isOn)
                 {

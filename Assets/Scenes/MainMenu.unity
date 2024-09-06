@@ -688,7 +688,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1432343930}
   - component: {fileID: 1432343929}
-  - component: {fileID: 1432343928}
   - component: {fileID: 1432343931}
   m_Layer: 0
   m_Name: Main Camera
@@ -697,14 +696,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1432343928
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1432343927}
-  m_Enabled: 1
 --- !u!20 &1432343929
 Camera:
   m_ObjectHideFlags: 0
@@ -857,6 +848,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6393152506278625394, guid: 561c69bc6c44a46a5babc0978511fb84, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7096689609816569349, guid: 561c69bc6c44a46a5babc0978511fb84, type: 3}
       propertyPath: m_LocalPosition.x
       value: -21.051556
@@ -914,6 +909,34 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1712618152}
+    - target: {fileID: 830882936656823263, guid: c54b6a88f065c496fbf9763fc819fbf8, type: 3}
+      propertyPath: soundsList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 830882936656823263, guid: c54b6a88f065c496fbf9763fc819fbf8, type: 3}
+      propertyPath: soundsList.Array.data[1].name
+      value: Flashlight
+      objectReference: {fileID: 0}
+    - target: {fileID: 830882936656823263, guid: c54b6a88f065c496fbf9763fc819fbf8, type: 3}
+      propertyPath: soundsList.Array.data[1].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 830882936656823263, guid: c54b6a88f065c496fbf9763fc819fbf8, type: 3}
+      propertyPath: soundsList.Array.data[1].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 830882936656823263, guid: c54b6a88f065c496fbf9763fc819fbf8, type: 3}
+      propertyPath: soundsList.Array.data[0].channel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 830882936656823263, guid: c54b6a88f065c496fbf9763fc819fbf8, type: 3}
+      propertyPath: soundsList.Array.data[1].channel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 830882936656823263, guid: c54b6a88f065c496fbf9763fc819fbf8, type: 3}
+      propertyPath: soundsList.Array.data[1].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e64b95938aaba492982a95507d32cf24, type: 3}
     - target: {fileID: 6905590138514284590, guid: c54b6a88f065c496fbf9763fc819fbf8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.925556
