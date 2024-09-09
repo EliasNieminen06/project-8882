@@ -16,6 +16,7 @@ public class ObjectInfo : MonoBehaviour
     [Header("Door")]
     public string regKeyID;
     public bool isDoor = false;
+    public bool winDoor = false;
     [Range(-180, 180)] public float openAngle;
     public bool locked = false;
     public bool opened = false;

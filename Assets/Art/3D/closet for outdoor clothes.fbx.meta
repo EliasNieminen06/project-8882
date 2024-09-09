@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: e14e7f119a1b246c4a8773ac8983fcaa
+guid: 64385b71baf33c140aa614fc441e51e8
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: aiFlat1
+    second: {fileID: 2100000, guid: e195cb0b2632946e39f3f7a4e221ca64, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -35,7 +40,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 20
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -90,7 +95,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.19999999
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

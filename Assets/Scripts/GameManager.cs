@@ -135,4 +135,9 @@ public class GameManager : MonoBehaviour
             dialogs.Clear();
         }
     }
+
+    public void WinGame()
+    {
+        SceneManager.LoadScene("EndScreen");
+    }
 }
