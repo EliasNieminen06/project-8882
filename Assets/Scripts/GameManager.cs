@@ -4,6 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
+[System.Serializable]
+public class sink
+{
+    public GameObject sinkObj;
+    public int number;
+    public bool isOn;
+}
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
@@ -20,6 +28,8 @@ public class GameManager : MonoBehaviour
     public int batteries = 0;
     public float flashlightBatteryLevel;
     public float maxFlashlightBatteryLevel;
+
+    public List<sink> sinks = new List<sink>();
 
     private void Awake()
     {
