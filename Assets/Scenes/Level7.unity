@@ -235,6 +235,7 @@ MonoBehaviour:
   isDialogue: 0
   dialogues: []
   riddleAnswer: 
+  isSink: 0
 --- !u!65 &6261208
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -836,6 +837,7 @@ MonoBehaviour:
   isDialogue: 0
   dialogues: []
   riddleAnswer: 
+  isSink: 0
 --- !u!65 &66927440
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3151,6 +3153,7 @@ MonoBehaviour:
   isDialogue: 0
   dialogues: []
   riddleAnswer: 
+  isSink: 0
 --- !u!65 &384255487
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5968,6 +5971,7 @@ MonoBehaviour:
   isDialogue: 0
   dialogues: []
   riddleAnswer: 
+  isSink: 0
 --- !u!65 &1042326508
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7105,6 +7109,7 @@ MonoBehaviour:
   isDialogue: 0
   dialogues: []
   riddleAnswer: 
+  isSink: 0
 --- !u!65 &1316464012
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7928,6 +7933,7 @@ MonoBehaviour:
   isDialogue: 0
   dialogues: []
   riddleAnswer: 
+  isSink: 0
 --- !u!65 &1507628947
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8057,6 +8063,7 @@ MonoBehaviour:
   isDialogue: 0
   dialogues: []
   riddleAnswer: 
+  isSink: 0
 --- !u!65 &1514160416
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8182,6 +8189,7 @@ MonoBehaviour:
   isDialogue: 0
   dialogues: []
   riddleAnswer: 
+  isSink: 0
 --- !u!65 &1546767926
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8629,6 +8637,7 @@ MonoBehaviour:
   isDialogue: 0
   dialogues: []
   riddleAnswer: 
+  isSink: 0
 --- !u!65 &1739921859
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9004,6 +9013,12 @@ PrefabInstance:
     - {fileID: 7319925195881316341, guid: 569866478d46c704c955a96fb6ca239b, type: 3}
     m_RemovedGameObjects:
     - {fileID: 7154166874715161080, guid: 569866478d46c704c955a96fb6ca239b, type: 3}
+    - {fileID: 3750744981338015275, guid: 569866478d46c704c955a96fb6ca239b, type: 3}
+    - {fileID: 7216795812056530783, guid: 569866478d46c704c955a96fb6ca239b, type: 3}
+    - {fileID: 7413742946485292556, guid: 569866478d46c704c955a96fb6ca239b, type: 3}
+    - {fileID: 4109955815962617195, guid: 569866478d46c704c955a96fb6ca239b, type: 3}
+    - {fileID: 8947537470302912673, guid: 569866478d46c704c955a96fb6ca239b, type: 3}
+    - {fileID: 7262689520211564884, guid: 569866478d46c704c955a96fb6ca239b, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 569866478d46c704c955a96fb6ca239b, type: 3}
@@ -9115,6 +9130,7 @@ MonoBehaviour:
   isDialogue: 0
   dialogues: []
   riddleAnswer: 
+  isSink: 0
 --- !u!65 &1884652898
 BoxCollider:
   m_ObjectHideFlags: 0

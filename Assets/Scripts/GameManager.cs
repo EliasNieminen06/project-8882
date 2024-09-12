@@ -5,11 +5,20 @@ using UnityEngine.SceneManagement;
 using TMPro;
 
 [System.Serializable]
-public class sink
+public class Sink
 {
     public GameObject sinkObj;
     public int number;
     public bool isOn;
+    public bool shouldBeOn;
+
+    public Sink(GameObject ssinkObj, int snumber, bool sisOn, bool sshouldBeOn)
+    {
+        sinkObj = ssinkObj;
+        number = snumber;
+        isOn = sisOn;
+        shouldBeOn = sshouldBeOn;
+    }
 }
 
 public class GameManager : MonoBehaviour
@@ -29,7 +38,7 @@ public class GameManager : MonoBehaviour
     public float flashlightBatteryLevel;
     public float maxFlashlightBatteryLevel;
 
-    public List<sink> sinks = new List<sink>();
+    public List<Sink> sinks = new List<Sink>();
 
     private void Awake()
     {
@@ -148,6 +157,30 @@ public class GameManager : MonoBehaviour
 
     public void WinGame()
     {
+        isInGame = false;
+        player.SetActive(false);
         SceneManager.LoadScene("EndScreen");
+    }
+
+    public void CheckSinks()
+    {
+        bool onRight = false;
+        bool offRight = false;
+
+        foreach (Sink sink in sinks)
+        {
+            if (sink.shouldBeOn && !sink.isOn) onRight = false;
+
+            else onRight = true;
+
+            if (!sink.shouldBeOn && sink.isOn) offRight = false;
+
+            else offRight = true;
+        }
+
+        if (onRight && offRight)
+        {
+            ChangeLevel(currentLevel + 1);
+        }
     }
 }

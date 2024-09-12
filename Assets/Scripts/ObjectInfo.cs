@@ -25,4 +25,7 @@ public class ObjectInfo : MonoBehaviour
     public bool isDialogue;
     public List<string> dialogues = new List<string>();
     public string riddleAnswer;
+
+    [Header("Sink")]
+    public bool isSink;
 }

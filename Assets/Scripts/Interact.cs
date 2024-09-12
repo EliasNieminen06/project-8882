@@ -27,27 +27,46 @@ public class Interact : MonoBehaviour
         if (Physics.Raycast(startPos, cam.transform.TransformDirection(Vector3.forward), out hit, interactionDistance, interactMask) && hit.collider.gameObject.GetComponent<ObjectInfo>().interactable && !lookingAtObj)
         {
             lookingAtObj = true;
-            lastObj = hit.collider.gameObject;
-            List<Material> newMaterials = new List<Material>();
-            for (int i = 0; i < lastObj.GetComponent<MeshRenderer>().materials.Length; i++)
+            if (hit.collider.gameObject != lastObj || lastObj == null)
             {
-                newMaterials.Add(hit.collider.gameObject.GetComponent<MeshRenderer>().materials[i]);
+                lastObj = hit.collider.gameObject;
             }
-            newMaterials.Add(outlineMaterial);
-            Material[] newMaterialsArr = newMaterials.ToArray();
-            hit.collider.gameObject.GetComponent<MeshRenderer>().materials = newMaterialsArr;
+            if (lastObj.GetComponent<MeshRenderer>())
+            {
+                addOutline(hit);
+            }
         }
         else if (!Physics.Raycast(startPos, cam.transform.TransformDirection(Vector3.forward), out hit, interactionDistance, interactMask))
         {
             if (lastObj)
             {
                 lookingAtObj = false;
-                List<Material> newMaterials = lastObj.GetComponent<MeshRenderer>().materials.ToList();
-                newMaterials.RemoveAt(newMaterials.Count - 1);
-                Material[] newMaterialsArr = newMaterials.ToArray();
-                lastObj.GetComponent<MeshRenderer>().materials = newMaterialsArr;
+                if (lastObj.GetComponent<MeshRenderer>())
+                {
+                    removeOutline();
+                }
                 lastObj = null;
             }
         }
+    }
+
+    private void addOutline(RaycastHit hit)
+    {
+        List<Material> newMaterials = new List<Material>();
+        for (int i = 0; i < lastObj.GetComponent<MeshRenderer>().materials.Length; i++)
+        {
+            newMaterials.Add(hit.collider.gameObject.GetComponent<MeshRenderer>().materials[i]);
+        }
+        newMaterials.Add(outlineMaterial);
+        Material[] newMaterialsArr = newMaterials.ToArray();
+        hit.collider.gameObject.GetComponent<MeshRenderer>().materials = newMaterialsArr;
+    }
+
+    private void removeOutline()
+    {
+        List<Material> newMaterials = lastObj.GetComponent<MeshRenderer>().materials.ToList();
+        newMaterials.RemoveAt(newMaterials.Count - 1);
+        Material[] newMaterialsArr = newMaterials.ToArray();
+        lastObj.GetComponent<MeshRenderer>().materials = newMaterialsArr;
     }
 }
