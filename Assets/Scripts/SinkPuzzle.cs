@@ -26,9 +26,6 @@ public class SinkPuzzle : MonoBehaviour
             if (Interact.instance.lastObj != null && Interact.instance.lastObj.GetComponent<ObjectInfo>().isSink)
             {
                 Interact.instance.lastObj.GetComponent<SinkPuzzle>().ToggleSink();
-                Sink s = GameManager.instance.sinks.Find(sink => sink.number == number);
-                s.isOn = isOn;
-                GameManager.instance.CheckSinks();
             }
         }
     }
@@ -38,12 +35,17 @@ public class SinkPuzzle : MonoBehaviour
         if (!isOn)
         {
             isOn = true;
+            Sink s = GameManager.instance.sinks.Find(sink => sink.number == number);
+            s.isOn = isOn;
             water.SetActive(true);
         }
         else
         {
             isOn = false;
+            Sink s = GameManager.instance.sinks.Find(sink => sink.number == number);
+            s.isOn = isOn;
             water.SetActive(false);
         }
+        GameManager.instance.CheckSinks();
     }
 }

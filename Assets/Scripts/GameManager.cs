@@ -118,6 +118,11 @@ public class GameManager : MonoBehaviour
         Interact.instance.lookingAtObj = false;
     }
 
+    public void Respawn()
+    {
+        SceneManager.LoadScene(currentLevel);
+    }
+
     public void drainFlashlightPower()
     {
         if (flashlightBatteryLevel > 0)
@@ -159,6 +164,7 @@ public class GameManager : MonoBehaviour
     {
         isInGame = false;
         player.SetActive(false);
+        gameUI.SetActive(false);
         SceneManager.LoadScene("EndScreen");
     }
 

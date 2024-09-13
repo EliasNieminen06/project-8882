@@ -4297,15 +4297,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2057607308882660071, guid: 4ff386230e0a14d46a3e25a9f63ba5a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.641124
+      value: -9.641
       objectReference: {fileID: 0}
     - target: {fileID: 2057607308882660071, guid: 4ff386230e0a14d46a3e25a9f63ba5a4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.12528779
+      value: 0.659
       objectReference: {fileID: 0}
     - target: {fileID: 2057607308882660071, guid: 4ff386230e0a14d46a3e25a9f63ba5a4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.3839517
+      value: 3.507
       objectReference: {fileID: 0}
     - target: {fileID: 2057607308882660071, guid: 4ff386230e0a14d46a3e25a9f63ba5a4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5584,6 +5584,83 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1001 &1180596051
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3188454333948261304, guid: f2265f0430e834c04ab40f11193ca8a5, type: 3}
+      propertyPath: dialogues.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188454333948261304, guid: f2265f0430e834c04ab40f11193ca8a5, type: 3}
+      propertyPath: dialogues.Array.data[0]
+      value: I had a key somewhere  in here.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188454333948261304, guid: f2265f0430e834c04ab40f11193ca8a5, type: 3}
+      propertyPath: dialogues.Array.data[1]
+      value: I forgot where i left it.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188454333948261304, guid: f2265f0430e834c04ab40f11193ca8a5, type: 3}
+      propertyPath: dialogues.Array.data[2]
+      value: Last time i saw it I was eating.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188454333948261304, guid: f2265f0430e834c04ab40f11193ca8a5, type: 3}
+      propertyPath: dialogues.Array.data[3]
+      value: With the key you get to the bathroom.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172767028454047367, guid: f2265f0430e834c04ab40f11193ca8a5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.785
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172767028454047367, guid: f2265f0430e834c04ab40f11193ca8a5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172767028454047367, guid: f2265f0430e834c04ab40f11193ca8a5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.395
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172767028454047367, guid: f2265f0430e834c04ab40f11193ca8a5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.5728173
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172767028454047367, guid: f2265f0430e834c04ab40f11193ca8a5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172767028454047367, guid: f2265f0430e834c04ab40f11193ca8a5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.81968313
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172767028454047367, guid: f2265f0430e834c04ab40f11193ca8a5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172767028454047367, guid: f2265f0430e834c04ab40f11193ca8a5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172767028454047367, guid: f2265f0430e834c04ab40f11193ca8a5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -249.894
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172767028454047367, guid: f2265f0430e834c04ab40f11193ca8a5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7556167697821210914, guid: f2265f0430e834c04ab40f11193ca8a5, type: 3}
+      propertyPath: m_Name
+      value: TEDDY 1 (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f2265f0430e834c04ab40f11193ca8a5, type: 3}
 --- !u!1 &1223205857
 GameObject:
   m_ObjectHideFlags: 0
@@ -10087,6 +10164,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4524348684456120282, guid: aba0af8ed94e44ff1bb3f20f04628237, type: 3}
+      propertyPath: state
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6314692098039165840, guid: aba0af8ed94e44ff1bb3f20f04628237, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.89
@@ -10288,3 +10369,4 @@ SceneRoots:
   - {fileID: 1414895533}
   - {fileID: 1559751691}
   - {fileID: 1546383619}
+  - {fileID: 1180596051}

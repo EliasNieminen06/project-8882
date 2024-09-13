@@ -28,13 +28,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7556167697821210914}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: 0.90949965, z: -0, w: 0.4157048}
   m_LocalPosition: {x: 0.195, y: 0.3, z: -1.254}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 130.873, z: 0}
 --- !u!33 &883786939593129002
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7556167697821210914}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -2600734270696429183, guid: ae703b448ef0e483ebc93f7c96be9290, type: 3}
 --- !u!23 &5359297222354486432
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63,7 +63,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7be58fe6676394c63b79253a6fe46c99, type: 2}
+  - {fileID: 1406175013827747316, guid: ae703b448ef0e483ebc93f7c96be9290, type: 3}
+  - {fileID: 7283231408027715549, guid: ae703b448ef0e483ebc93f7c96be9290, type: 3}
+  - {fileID: -699073570871256315, guid: ae703b448ef0e483ebc93f7c96be9290, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -128,6 +130,7 @@ MonoBehaviour:
   pickable: 0
   regKeyID: 
   isDoor: 0
+  winDoor: 0
   openAngle: 0
   locked: 0
   opened: 0
@@ -135,3 +138,5 @@ MonoBehaviour:
   dialogues:
   - I could just give you the key out, but I first I want you to solve my riddle!
   - I am an odd number. Take away one letter and I become even. What am I?
+  riddleAnswer: 
+  isSink: 0
