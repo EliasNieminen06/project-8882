@@ -36,6 +36,7 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
+
         Instance = this;
 
         foreach (Sound s in soundsList)

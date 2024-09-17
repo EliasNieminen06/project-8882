@@ -36,14 +36,14 @@ public class SinkPuzzle : MonoBehaviour
         {
             isOn = true;
             Sink s = GameManager.instance.sinks.Find(sink => sink.number == number);
-            s.isOn = isOn;
+            s.isOn = true;
             water.SetActive(true);
         }
         else
         {
             isOn = false;
             Sink s = GameManager.instance.sinks.Find(sink => sink.number == number);
-            s.isOn = isOn;
+            s.isOn = false;
             water.SetActive(false);
         }
         GameManager.instance.CheckSinks();

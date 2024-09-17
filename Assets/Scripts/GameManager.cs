@@ -42,7 +42,14 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if (instance != null && instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            instance = this;
+        }
         DontDestroyOnLoad(this);
     }
 
@@ -56,7 +63,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P) && isInGame)
+        if (Input.GetKeyDown(KeyCode.Escape) && isInGame)
         {
             TogglePause();
         }
@@ -78,21 +85,39 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void TogglePause()
+    public void TogglePause()
     {
         isPuased = !isPuased;
         if (isPuased)
         {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.Confined;
             Time.timeScale = 0;
             pauseMenu.SetActive(true);
             player.GetComponent<Movement>().enabled = false;
         }
         else
         {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1;
             pauseMenu.SetActive(false);
             player.GetComponent<Movement>().enabled = true;
         }
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(0);
+        TogglePause();
+        isInGame = false;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     public void GoToMainMenu()
@@ -166,27 +191,27 @@ public class GameManager : MonoBehaviour
         player.SetActive(false);
         gameUI.SetActive(false);
         SceneManager.LoadScene("EndScreen");
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     public void CheckSinks()
     {
-        bool onRight = false;
-        bool offRight = false;
+        bool sinksAreValid = ValidateSinks();
 
-        foreach (Sink sink in sinks)
-        {
-            if (sink.shouldBeOn && !sink.isOn) onRight = false;
-
-            else onRight = true;
-
-            if (!sink.shouldBeOn && sink.isOn) offRight = false;
-
-            else offRight = true;
-        }
-
-        if (onRight && offRight)
+        if (sinksAreValid)
         {
             ChangeLevel(currentLevel + 1);
         }
+    }
+
+    private bool ValidateSinks()
+    {
+        foreach (Sink sink in sinks)
+        {
+            if (sink.shouldBeOn && !sink.isOn) return false;
+            if (!sink.shouldBeOn && sink.isOn) return false;
+        }
+        return true;
     }
 }
